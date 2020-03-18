@@ -74,7 +74,7 @@ setInterval(() => {
         }
       );
   });
-}, 1200 * 10);
+}, 600 * 1000);
 
 bot.on("text", ctx => {
   if (!isNaN(ctx.message.text)) threshold = ctx.message.text;
