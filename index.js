@@ -15,8 +15,8 @@ let threshold = 82;
 
 let today = { day: "", high: 0, low: 200, current: 0 };
 
-setInterval(() => {
-  var options = {
+let loop = () => {
+  let options = {
     method: "GET",
     url:
       "https://x.wazirx.com/wazirx-falcon/api/v1.0/p2p/order-book?market=usdtinr&limit=10",
@@ -74,6 +74,11 @@ setInterval(() => {
         }
       );
   });
+};
+
+loop();
+setInterval(() => {
+  loop();
 }, 600 * 1000);
 
 bot.on("text", ctx => {
